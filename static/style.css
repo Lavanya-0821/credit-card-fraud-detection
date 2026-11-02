@@ -1,0 +1,1002 @@
+/* ============================================================
+   CREDIT CARD FRAUD DETECTION
+   MAIN STYLESHEET
+   ============================================================ */
+
+
+/* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+
+    background: #0b1220;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+.logo-icon {
+    margin-right: 9px;
+    font-size: 27px;
+}
+
+
+.navbar nav {
+    display: flex;
+    gap: 32px;
+}
+
+
+.navbar nav a {
+    color: #dbe4f2;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.navbar nav a:hover {
+    color: #60a5fa;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 590px;
+
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(96, 165, 250, 0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #07111f 0%,
+            #0d2a52 45%,
+            #1565c0 100%
+        );
+
+}
+
+
+.hero-content {
+    max-width: 680px;
+}
+
+
+.badge {
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    display: block;
+    color: #60a5fa;
+}
+
+
+.hero p {
+
+    font-size: 18px;
+
+    color: #dbeafe;
+
+    max-width: 600px;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #0755a5;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+
+.hero-button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================= HERO CARD ================= */
+
+.hero-card {
+
+    width: 330px;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 22px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+.security-icon {
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-card h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.hero-card p {
+
+    font-size: 14px;
+
+    color: #dbeafe;
+
+    margin-bottom: 25px;
+}
+
+
+.security-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #bbf7d0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.status-dot {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px #22c55e;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.prediction-section,
+.about-section {
+
+    padding: 80px 8%;
+}
+
+
+.prediction-section {
+
+    background: #f4f7fb;
+}
+
+
+.section-heading {
+
+    text-align: center;
+
+    max-width: 720px;
+
+    margin: 0 auto 45px;
+}
+
+
+.section-tag {
+
+    display: inline-block;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    color: #1769c2;
+
+    margin-bottom: 10px;
+}
+
+
+.section-heading h2 {
+
+    font-size: 38px;
+
+    color: #111827;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading p {
+
+    color: #667085;
+
+    font-size: 16px;
+}
+
+
+/* ================= PREDICTION CARD ================= */
+
+.prediction-card {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 40px rgba(15, 23, 42, 0.10);
+
+    border: 1px solid #e5eaf1;
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #e5eaf1;
+}
+
+
+.card-header h3 {
+
+    font-size: 24px;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+
+.card-header p {
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+.sample-button {
+
+    border: none;
+
+    background: #e8f1ff;
+
+    color: #0755a5;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.sample-button:hover {
+
+    background: #d6e8ff;
+
+    transform: translateY(-2px);
+}
+
+
+.sample-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* ================= MAIN INPUT ================= */
+
+.main-input {
+
+    margin-bottom: 30px;
+}
+
+
+.main-input label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #344054;
+
+    margin-bottom: 8px;
+}
+
+
+.main-input input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d0d5dd;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.main-input input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* ================= FEATURES ================= */
+
+.features-title {
+
+    font-size: 18px;
+
+    margin-bottom: 18px;
+
+    color: #1d2939;
+}
+
+
+.features-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #475467;
+
+    margin-bottom: 6px;
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: 1px solid #d0d5dd;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #101828;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+.input-group input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+.input-group input::placeholder {
+
+    color: #98a2b3;
+}
+
+
+/* ================= PREDICT BUTTON ================= */
+
+.predict-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #0755a5
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+.predict-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 99, 235, 0.35);
+}
+
+
+.predict-button:active {
+
+    transform: translateY(0);
+}
+
+
+/* ================= LOADING ================= */
+
+.loading {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    font-weight: bold;
+}
+
+
+.spinner {
+
+    width: 22px;
+    height: 22px;
+
+    border: 3px solid #bfdbfe;
+
+    border-top: 3px solid #2563eb;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ================= RESULT ================= */
+
+.result {
+
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    text-align: center;
+}
+
+
+.result h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+
+.result p {
+
+    font-size: 15px;
+
+    margin: 5px 0;
+}
+
+
+.result strong {
+
+    font-size: 18px;
+}
+
+
+/* NORMAL */
+
+.result.normal {
+
+    display: block;
+
+    background: #ecfdf3;
+
+    border: 1px solid #a7f3d0;
+
+    color: #047857;
+}
+
+
+/* FRAUD */
+
+.result.fraud {
+
+    display: block;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
+
+    background: white;
+}
+
+
+.about-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.about-card {
+
+    padding: 28px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    transition: 0.3s;
+}
+
+
+.about-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+
+.about-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f1ff;
+
+    border-radius: 14px;
+
+    font-size: 27px;
+
+    margin-bottom: 18px;
+}
+
+
+.about-card h3 {
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+    color: #172033;
+}
+
+
+.about-card p {
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    padding: 35px 20px;
+
+    background: #0b1220;
+
+    color: #cbd5e1;
+
+    text-align: center;
+}
+
+
+.footer-logo {
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+footer p {
+
+    font-size: 14px;
+}
+
+
+footer .copyright {
+
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 70px 6%;
+    }
+
+
+    .hero-card {
+
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 45px;
+    }
+
+
+    .features-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .about-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        padding: 0 20px;
+    }
+
+
+    .navbar nav {
+
+        gap: 12px;
+    }
+
+
+    .navbar nav a {
+
+        font-size: 12px;
+    }
+
+
+    .logo {
+
+        font-size: 18px;
+    }
+
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 60px 20px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 38px;
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+    }
+
+
+    .prediction-section,
+    .about-section {
+
+        padding: 60px 20px;
+    }
+
+
+    .prediction-card {
+
+        padding: 22px;
+    }
+
+
+    .card-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .features-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 30px;
+    }
+
+}

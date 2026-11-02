@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FraudGuard | Credit Card Fraud Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">🛡️</span>
+            <span>FraudGuard</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#prediction">Prediction</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🤖 Machine Learning Powered
+            </div>
+
+            <h1>
+                Credit Card
+                <span>Fraud Detection</span>
+            </h1>
+
+            <p>
+                Detect suspicious credit card transactions
+                using Machine Learning and advanced data analysis.
+            </p>
+
+            <a href="#prediction" class="hero-button">
+                Check Transaction
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="security-icon">
+                🛡️
+            </div>
+
+            <h3>Transaction Security</h3>
+
+            <p>
+                AI-powered analysis for identifying
+                suspicious transactions.
+            </p>
+
+            <div class="security-status">
+                <span class="status-dot"></span>
+                System Active
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PREDICTION ================= -->
+
+    <section id="prediction" class="prediction-section">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                FRAUD ANALYSIS
+            </span>
+
+            <h2>
+                Analyze Your Transaction
+            </h2>
+
+            <p>
+                Enter transaction details below or load a sample
+                transaction to test the Machine Learning model.
+            </p>
+
+        </div>
+
+
+        <div class="prediction-card">
+
+            <!-- Card Header -->
+
+            <div class="card-header">
+
+                <div>
+                    <h3>🔍 Transaction Analysis</h3>
+
+                    <p>
+                        Provide the transaction features
+                        for prediction.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="sampleButton"
+                    class="sample-button">
+
+                    📥 Load Sample
+
+                </button>
+
+            </div>
+
+
+            <!-- Form -->
+
+            <form id="fraudForm">
+
+                <!-- Time -->
+
+                <div class="main-input">
+
+                    <label for="Time">
+                        Transaction Time
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        id="Time"
+                        name="Time"
+                        placeholder="Enter transaction time"
+                        required>
+
+                </div>
+
+
+                <!-- Features -->
+
+                <h4 class="features-title">
+                    Transaction Features
+                </h4>
+
+
+                <div class="features-grid">
+
+                    {% for feature in features %}
+
+                        {% if feature != "Time"
+                              and feature != "Amount" %}
+
+                        <div class="input-group">
+
+                            <label for="{{ feature }}">
+                                {{ feature }}
+                            </label>
+
+                            <input
+                                type="number"
+                                step="any"
+                                id="{{ feature }}"
+                                name="{{ feature }}"
+                                placeholder="Enter {{ feature }}"
+                                required>
+
+                        </div>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+
+                    <!-- Amount -->
+
+                    <div class="input-group amount-input">
+
+                        <label for="Amount">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            step="any"
+                            min="0"
+                            id="Amount"
+                            name="Amount"
+                            placeholder="Enter amount"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Predict Button -->
+
+                <button
+                    type="submit"
+                    class="predict-button">
+
+                    <span>🔎</span>
+                    Predict Transaction
+
+                </button>
+
+            </form>
+
+
+            <!-- Loading -->
+
+            <div id="loading" class="loading">
+
+                <div class="spinner"></div>
+
+                <span>
+                    Analyzing transaction...
+                </span>
+
+            </div>
+
+
+            <!-- Result -->
+
+            <div id="result" class="result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about-section">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                ABOUT PROJECT
+            </span>
+
+            <h2>
+                How Our System Works
+            </h2>
+
+            <p>
+                A Machine Learning based system designed
+                to identify fraudulent credit card transactions.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <!-- Machine Learning -->
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+                    Random Forest classification is used
+                    to identify whether a transaction is
+                    normal or fraudulent.
+                </p>
+
+            </div>
+
+
+            <!-- Dataset -->
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Dataset
+                </h3>
+
+                <p>
+                    The system uses credit card transaction
+                    data containing normal and fraudulent
+                    transactions.
+                </p>
+
+            </div>
+
+
+            <!-- SMOTE -->
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    SMOTE
+                </h3>
+
+                <p>
+                    SMOTE handles the highly imbalanced
+                    dataset by generating synthetic
+                    fraud samples during training.
+                </p>
+
+            </div>
+
+
+            <!-- Evaluation -->
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    📈
+                </div>
+
+                <h3>
+                    Model Evaluation
+                </h3>
+
+                <p>
+                    Accuracy, Precision, Recall, F1-Score
+                    and ROC-AUC are used to evaluate
+                    the model.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🛡️ FraudGuard
+        </div>
+
+        <p>
+            Credit Card Fraud Detection using Machine Learning
+        </p>
+
+        <p class="copyright">
+            © 2026 FraudGuard. Machine Learning Project.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
